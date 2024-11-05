@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken")
 
-const verifyToken = (req, res, next) => {
+exports.verifyToken = (req, res, next) => {
     const token = req.headers["authorization"]?.split(' ')[1] //Séparer Bearer du Token
 
     if (!token) {
@@ -16,5 +16,3 @@ const verifyToken = (req, res, next) => {
         next()
     })
 }
-
-export default verifyToken; 

@@ -3,6 +3,8 @@ require('dotenv').config();
 
 const express = require('express');
 const jwt = require('jsonwebtoken');
+const {verifyToken} = require('../auth');
+
 
 
 app = express.Router()
@@ -26,11 +28,11 @@ app.post('/log-in', async (req, res) => {
             )
         })
     }else{
-        res.status(401).json({ error: 'Mot de passe incorrect !' });
+        res.status(401).json({ error: 'Identifiants incorrects !' });
     }
 })
 
-app.get('/get-seats', async (req, res) => {
+app.get('/get-seats',  verifyToken, async (req, res) => {
     let seats = await PersonService.getSeatsRemaining()
     res.json(seats);
 })

@@ -78,7 +78,9 @@ exports.findBookings = async (req, res) => {
             attributes: [
                 'id',
                 'role',
-                'last_name'
+                'first_name',
+                'last_name',
+                'email'
             ]
         }, {
             model: Table,
