@@ -50,8 +50,6 @@ app.post('/mail', verifyToken, async (req, res) => {
 
 app.get('/mail-recap', verifyToken, async (req, res) => {
     const bookings = await BookingService.findBookings();
-    console.log(bookings);
-    
     let status = await Mailer.sendFinalMail(bookings);
     return res.json(status);
 })
