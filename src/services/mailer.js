@@ -104,10 +104,11 @@ exports.sendFinalMail = async (bookings) => {
                 html: `
                     <style>
                         body {
+                            display: flex;
                             font-family: Arial, sans-serif;
                             background-color: #f4f4f4;
                             color: #333;
-                            margin: 0;
+                            margin: auto;
                             padding: 0;
                         }
                         .email-container {
@@ -121,6 +122,7 @@ exports.sendFinalMail = async (bookings) => {
                         }
                         h1 {
                             font-size: 24px;
+                            text-align: center;
                             color: hsl(230, 50%, 5%);
                         }
                         h2 {
