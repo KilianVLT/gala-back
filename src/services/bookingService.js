@@ -56,6 +56,7 @@ exports.deleteWithTableId = async (id) => {
     return "destroy ok"
 }
 
+// TODO: Supprimer la réservation directement
 exports.deleteWithPersonId = async (params) => {
     let user = await Person.findByPk(params.id)
     let booking = await Booking.findOne({
